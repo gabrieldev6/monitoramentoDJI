@@ -31,7 +31,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/view_info_panel"
-        android:layout_width="250dp"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toStartOf="@+id/msg_panel"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
             android:id="@+id/view_base_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/light_gray2"
+            android:background="@color/default_selected_bg_color"
             android:orientation="vertical"
             android:padding="16dp"
             app:layout_constraintBottom_toTopOf="@+id/view_case_panel"
@@ -80,17 +80,6 @@
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/text_view_product_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="4dp"
-                android:gravity="center"
-                android:text="@string/product_name"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-            <TextView
                 android:id="@+id/text_view_is_debug"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -108,11 +97,11 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="2dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_base_info"
+            android:background="@color/default_selected_bg_color"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:background="@color/light_gray2">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_base_info">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -131,32 +120,16 @@
                     android:textSize="18sp" />
 
                 <Button
-                    android:id="@+id/default_layout_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:elevation="10dp"
-                    android:foreground="?selectableItemBackground"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="8dp"
-                    android:background="@color/white"
-                    android:enabled="false"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:text="@string/default_layout"
-                    android:textColor="@color/selector_enable_button" />
-
-                <Button
                     android:id="@+id/widget_list_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="10dp"
-                    android:foreground="?selectableItemBackground"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="8dp"
                     android:background="@color/white"
+                    android:elevation="10dp"
                     android:enabled="false"
+                    android:foreground="?selectableItemBackground"
                     android:gravity="center"
                     android:padding="8dp"
                     android:text="@string/widget_list"
@@ -166,13 +139,13 @@
                     android:id="@+id/testing_tool_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="10dp"
-                    android:foreground="?selectableItemBackground"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="8dp"
                     android:background="@color/white"
+                    android:elevation="10dp"
                     android:enabled="true"
+                    android:foreground="?selectableItemBackground"
                     android:gravity="center"
                     android:padding="8dp"
                     android:text="@string/testing_tools"
@@ -184,10 +157,10 @@
 
     <View
         android:id="@+id/msg_panel"
-        android:layout_width="0dp"
+        android:layout_width="290dp"
         android:layout_height="0dp"
         android:layout_marginLeft="2dp"
-        android:background="@color/light_gray2"
+        android:background="@color/dialog_bg_white"
         app:layout_constraintBottom_toBottomOf="@+id/view_info_panel"
         app:layout_constraintLeft_toRightOf="@+id/view_info_panel"
         app:layout_constraintRight_toRightOf="parent"
@@ -200,7 +173,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/news"
-        android:textColor="@color/white"
+        android:textColor="@color/black_half"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/msg_panel"
         app:layout_constraintTop_toTopOf="@+id/msg_panel" />
@@ -223,11 +196,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="92dp"
         android:orientation="horizontal"
         android:paddingTop="16dp"
         android:paddingBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/msg_panel"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/msg_panel">
 
         <ImageView
@@ -253,7 +228,7 @@
             android:layout_marginTop="50dp"
             android:gravity="top|center"
             android:text="@string/sdk_forum"
-            android:textColor="@color/white"
+            android:textColor="@color/black_half"
             android:textSize="12sp"
             app:layout_constraintEnd_toStartOf="@+id/guide_1"
             app:layout_constraintStart_toStartOf="parent"
@@ -270,10 +245,10 @@
             android:id="@+id/icon_release_node"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/release_icon"
             android:elevation="10dp"
             android:foreground="?selectableItemBackground"
+            android:scaleType="centerInside"
+            android:src="@drawable/release_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="H,1:1"
             app:layout_constraintEnd_toStartOf="@+id/guide_2"
@@ -288,7 +263,7 @@
             android:layout_height="wrap_content"
             android:gravity="top|center"
             android:text="@string/release_nodes"
-            android:textColor="@color/white"
+            android:textColor="@color/black_half"
             android:textSize="12sp"
             app:layout_constraintEnd_toStartOf="@+id/guide_2"
             app:layout_constraintStart_toStartOf="@+id/guide_1"
@@ -305,10 +280,10 @@
             android:id="@+id/icon_tech_support"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/tec_support_icon"
             android:elevation="10dp"
             android:foreground="?selectableItemBackground"
+            android:scaleType="centerInside"
+            android:src="@drawable/tec_support_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="H,1:1"
             app:layout_constraintEnd_toEndOf="parent"
@@ -323,7 +298,7 @@
             android:layout_height="wrap_content"
             android:gravity="top|center"
             android:text="@string/tech_support"
-            android:textColor="@color/white"
+            android:textColor="@color/black_half"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guide_2"
@@ -331,14 +306,31 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/text_core_info"
+        android:id="@+id/text_view_product_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="test test"
-        android:textColor="@color/green"
-        android:textSize="9dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="SpUsage" />
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="4dp"
+        android:gravity="center"
+        android:text="@string/product_name"
+        android:textColor="@color/black_half"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="512dp"
+        tools:layout_editor_absoluteY="176dp" />
+
+    <Button
+        android:id="@+id/default_layout_button"
+        android:layout_width="251dp"
+        android:layout_height="38dp"
+        android:background="@color/gray"
+        android:elevation="10dp"
+        android:enabled="false"
+        android:foreground="?selectableItemBackground"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/default_layout"
+        android:textColor="@color/dialog_divide_line_gray"
+        tools:layout_editor_absoluteX="462dp"
+        tools:layout_editor_absoluteY="357dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
